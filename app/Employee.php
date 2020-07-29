@@ -7,15 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
    protected $fillable = [
+        'user_id',
+        'company_id',
         'first_name',
         'last_name',
-        'first_name',
-        'email',
+        'middle_name',
+        'date_of_birth',
+        'martial_status',
+        'sex',
         'phone_no',
+        'alt_phone_no',
+        'email',
+        'department',
         'position',
         'salary',
-        'type',
-        'status',
-        'duration',
+        'access_level',
+        'experience_years',
+        'qualification',
+        'employee_type',
+        'start_date',
+        'country',
+        'state',
+        'city'
    ];
+   public function user(){
+      return $this->hasOne('App\User' , 'id' , 'user_id');
+   }
+
 }
