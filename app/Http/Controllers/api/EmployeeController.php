@@ -65,7 +65,7 @@ class EmployeeController extends Controller
         ]);
         
         $employee->user->update([
-            'name' => $request->first_name . ' ' . $request->first_name,
+            'name' => $request->first_name . ' ' . $request->middlename . ' '. $request->lastname,
             'company_id' => auth('api')->user()->company_id,
             'email' => $request->email,
             'user_role' =>$request->access_level,

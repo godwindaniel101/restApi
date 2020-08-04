@@ -38,7 +38,31 @@ Route::group([
     Route::delete('deleteProject/{id}', 'api\ProjectController@deleteProject');
     
     
-  
+    Route::post('createTask', 'api\TaskController@createTask');
+    Route::post('updateTask/{id}', 'api\TaskController@updateTask');
+    Route::get('getTask', 'api\TaskController@getTask');
+    Route::get('getTaskProjectRecord/{id}', 'api\TaskController@getTaskProjectRecord');
+    Route::get('getTaskRecord/{id}', 'api\TaskController@getTaskRecord');
+    Route::delete('deleteTask/{id}', 'api\TaskController@deleteTask');
+    Route::get('getTaskName/{id}' , 'api\TaskController@getTaskName');
+
+
+
+    Route::delete('getAllTodo', 'api\TodoController@getAllTodo');
+    Route::post('addTodo/{id?}', 'api\TodoController@addTodo');
+    Route::get('getTodo/{id?}', 'api\TodoController@getTodo');
+    Route::post('completeTodo/{id?}', 'api\TodoController@completeTodo');
+    Route::post('completeAllTodo/{id?}', 'api\TodoController@completeAllTodo');
+    Route::delete('deleteTodo/{id}', 'api\TodoController@deleteTodo');
+    Route::delete('deleteAllTodo/{id?}', 'api\TodoController@deleteAllTodo');
+
+
+
+
+    //employee
+    Route::get('getTaskUnitProjectRecord', 'api\TaskController@getTaskUnitProjectRecord');
+     Route::post('updateTaskStatus/{id}', 'api\TaskController@updateTaskStatus');
+    
     Route::group([
       'middleware' => 'auth:api'
     ], function() {

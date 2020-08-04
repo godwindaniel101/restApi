@@ -121,8 +121,7 @@ class AuthenticationController extends Controller
      */
     public function user(Request $request)
     {
-
-        return response()->json($request->user());
+        return response()->json(['data' => $request->user()],201);
     }
     public function employee(){
         return auth('api')->user();

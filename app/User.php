@@ -31,4 +31,8 @@ class User extends Authenticatable
         // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
         return $this->hasOne('App\Company', 'id', 'id');
     }
+    public function employee(){
+        // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
+        return $this->hasOne('App\Employee', 'user_id', 'id');
+    }
 }
