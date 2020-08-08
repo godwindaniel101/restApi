@@ -24,6 +24,9 @@ Route::group([
 ], function () {
     Route::post('login', 'api\AuthenticationController@login');
     Route::post('register', 'api\AuthenticationController@register');
+    Route::post('sendToken','api\AuthenticationController@sendToken');
+    Route::post('validateToken','api\AuthenticationController@validateToken');
+    Route::post('resetPassword','api\AuthenticationController@resetPassword');
     Route::get('adminDashboard', 'api\DashboardController@adminDashboard');
 
     Route::post('createEmployee', 'api\EmployeeController@createEmployee');
@@ -56,7 +59,7 @@ Route::group([
     Route::post('completeAllTodo/{id?}', 'api\TodoController@completeAllTodo');
     Route::delete('deleteTodo/{id}', 'api\TodoController@deleteTodo');
     Route::delete('deleteAllTodo/{id?}', 'api\TodoController@deleteAllTodo');
-
+   
 
     Route::get('getTaskUnitProjectRecord', 'api\TaskController@getTaskUnitProjectRecord');
      Route::post('updateTaskStatus/{id}', 'api\TaskController@updateTaskStatus');
