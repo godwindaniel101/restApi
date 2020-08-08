@@ -53,7 +53,32 @@ class AuthenticationController extends Controller
             'id' => $user->id,
         ]);
         $company->save();
-
+        $employee = new Employee([
+            'user_id' => $user->id,
+            'company_id' => $user->id,
+            'first_name' =>$request->company_name , 
+            'last_name' =>'default' ,
+            'middle_name' =>'default' ,
+            'date_of_birth' =>'default',
+            'martial_status' =>'default',
+            'sex' =>'' ,
+            'phone_no' =>'default',
+            'alt_phone_no' =>'default',
+            'email' =>'default',
+            'department' =>'default',
+            'position' =>'default',
+            'salary' =>'default',
+            'access_level' =>'default',
+            'experience_years' =>'default',
+            'employee_type' =>'default',
+            'qualification' =>'default' ,
+            'employee_type' =>'default',
+            'start_date' =>'default',
+            'country' =>'default' ,
+            'state' =>'default',
+            'city' =>'default',
+        ]);
+        $employee->save();
 
         return response()->json([
             'message' => 'Successfully created user!'

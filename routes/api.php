@@ -58,9 +58,6 @@ Route::group([
     Route::delete('deleteAllTodo/{id?}', 'api\TodoController@deleteAllTodo');
 
 
-
-
-    //employee
     Route::get('getTaskUnitProjectRecord', 'api\TaskController@getTaskUnitProjectRecord');
      Route::post('updateTaskStatus/{id}', 'api\TaskController@updateTaskStatus');
     
