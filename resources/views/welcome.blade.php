@@ -12,6 +12,11 @@
         
     </head>
     <body>
+    <div class="welcome">
+    Welcome.. TO VANCE PROJECT MANAGEMENT STAND ALONE
+    </div>
+    </body>
+    <!-- <body>
         <div class="wrap-container" id="app">
         <div class="container">
         <div class="header">
@@ -142,6 +147,6 @@
         </div>
         </div>
         </div>
-    </body>
+    </body> -->
     <script src="{{asset('js/app.js')}}"></script>
 </html>
