@@ -41,6 +41,7 @@ class AuthenticationController extends Controller
             'user_role' => '3',
             'password' => bcrypt($request->password)
         ]);
+        
         $user->save();
 
         $user->update([

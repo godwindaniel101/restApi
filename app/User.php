@@ -29,10 +29,14 @@ class User extends Authenticatable
     ];
     public function company(){
         // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
-        return $this->hasOne('App\Company', 'id', 'id');
+        return $this->hasOne('App\Company', 'id', 'company_id');
     }
     public function employee(){
         // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
         return $this->hasOne('App\Employee', 'user_id', 'id');
+    }
+    public function task(){
+        // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
+        return $this->hasMany('App\Task', 'assiged_to', 'id');
     }
 }

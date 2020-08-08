@@ -33,5 +33,8 @@ class Employee extends Model
    public function user(){
       return $this->hasOne('App\User' , 'id' , 'user_id');
    }
+   public function task(){
+      return $this->hasOne('App\Task' , 'assiged_to' , 'id');
+   }
 
 }

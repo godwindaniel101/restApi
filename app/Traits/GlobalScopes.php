@@ -40,5 +40,40 @@ trait GlobalScopes{
                 }
                 return 'done';
      }
+
+     public function idleEmployee(){
+        $free_employee = [];
+        $companies_employee = auth('api')->user()->company->employee;
+        foreach($companies_employee as $employee){
+            $data = $employee->task;       
+            if($data == null){
+                array_push( $free_employee,['employee_name'=>$employee->first_name ,'employee_id'=>$employee->id ]);
+            };
+        }
+        return $free_employee;
+     }
+
+     public function listEmployee(){
+        return auth('api')->user()->company->employee;
+     }
+     public function listProject(){
+         return auth('api')->user()->company->project;
+     }
+     public function dueProject(){
+      $data = auth('api')->user()->company->with('project')
+        ->whereHas('project' ,function($q){
+         $q->where('end_date', '>=', today()->format('Y-m-d'));
+        })->get();
+        return $data;
+     }
+     public function activeProject(){
+        return auth('api')->user()->company->with('project')
+        ->whereHas('project' ,function($q){
+          $q->where('ast_project_supervisor', "5");
+        })->get();
+     }
+     public function listTask(){
+        return auth('api')->user()->company->task;
+     }
 }
 ?>

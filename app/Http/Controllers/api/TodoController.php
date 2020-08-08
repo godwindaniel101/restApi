@@ -44,6 +44,9 @@ class TodoController extends Controller
             201
         );
     }
+    public function testData(){
+        return 'working';
+    }
     public function completeTodo($id)
     {;
         $todo =  Todo::where('id', $id);

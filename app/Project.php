@@ -23,4 +23,8 @@ class Project extends Model
     public function astsupervisor(){
         return  $this->hasOne('App\Employee' , 'id' , 'ast_project_supervisor');
       }
+    public function isCompleted($query)
+      {
+          return $query->where('project_supervisor','==', '3');    
+      }
 }
