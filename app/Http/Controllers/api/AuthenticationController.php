@@ -180,7 +180,7 @@ class AuthenticationController extends Controller
         $password->save();
         return response()->json(['message' => 'email sent'], 201);
     }
-
+    //medium.com/graymatrix/using-gmail-smtp-server-to-send-email-in-laravel-91c0800f9662
     public function validateToken(Request $request)
     {
         // return($request->token);
